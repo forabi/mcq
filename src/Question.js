@@ -31,7 +31,7 @@ class App extends React.Component {
     isAnswerShown: false,
   };
 
-  choosePossibleAnswer = i => () => {
+  choosePossibleAnswer = i => e => {
     this.props.dispatch({
       type: actionTypes.CHOOSE_ANSWER,
       payload: {
@@ -39,6 +39,8 @@ class App extends React.Component {
         chosenAnswer: i,
       },
     });
+
+    e.target.blur();
   };
 
   render() {

@@ -65,7 +65,6 @@ class App extends React.Component {
             {possibleAnswers.map((answer, i) => (
               <ListItem
                 key={i}
-                button
                 onClick={
                   canSetAnswer ? this.choosePossibleAnswer(i) : undefined
                 }

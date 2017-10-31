@@ -62,8 +62,6 @@ const BUILD_PATH = path.resolve(
   process.env.BUILD_PATH || './dist',
 );
 
-const PUBLIC_PATH = '/mcq';
-
 const excludedPatterns = compact([
   /node_modules/,
   ifProd(/\.test\.tsx?$/),
@@ -233,14 +231,13 @@ const config = {
   output: {
     filename: ifProd('[name]_[chunkhash].js') || '[name]_[hash].js',
     path: BUILD_PATH,
-    publicPath: PUBLIC_PATH,
   },
 
   devServer:
     ifDev({
       port: process.env.STATIC_SERVER_PORT || 3000,
       inline: true,
-      contentBase: PUBLIC_PATH,
+      contentBase: '/',
       hot: env.isHot,
       historyApiFallback: true,
     }) || undefined,

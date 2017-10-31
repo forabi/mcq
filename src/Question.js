@@ -39,8 +39,6 @@ class App extends React.Component {
         chosenAnswer: i,
       },
     });
-
-    e.target.blur();
   };
 
   render() {
@@ -73,11 +71,11 @@ class App extends React.Component {
                   [classes.answerChoosen]: i === choosenAnswerIndex,
                   [classes.answerWrong]:
                     canShowAnswer &&
+                    isAnswerShown &&
                     choosenAnswerIndex !== correctAnswerIndex &&
-                    i === choosenAnswerIndex &&
-                    isAnswerShown,
+                    i === choosenAnswerIndex,
                   [classes.answerCorrect]:
-                    canShowAnswer && i === correctAnswerIndex && isAnswerShown,
+                    canShowAnswer && isAnswerShown && i === correctAnswerIndex,
                 })}
               >
                 <ListItemText primary={`${i + 1}. ${answer}`} />

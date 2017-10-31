@@ -68,7 +68,8 @@
     "svg-sprite-loader": "^3.4.1",
     "svgo": "^1.0.1",
     "svgo-loader": "^2.0.0",
-    "webpack-hot-middleware": "^2.20.0"
+    "webpack-hot-middleware": "^2.20.0",
+    "workbox-webpack-plugin": "^2.1.0"
   },
   "dependencies": {
     "@types/lodash": "^4.14.80",

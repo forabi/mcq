@@ -98,4 +98,10 @@ Promise.all([import('./store')]).then(([{ store }]) => {
     </MuiThemeProvider>,
     document.getElementById('app'),
   );
+
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+      .register('./sw.js')
+      .then(() => console.log('Registered'));
+  }
 });

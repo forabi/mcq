@@ -9,6 +9,8 @@ const NameAllModulesPlugin = require('name-all-modules-plugin');
 const BabiliPlugin = require('babel-minify-webpack-plugin');
 const PreloadWebpackPlugin = require('preload-webpack-plugin');
 
+const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
+
 const path = require('path');
 const fs = require('fs');
 const debug = require('debug');
@@ -502,6 +504,12 @@ const config = {
         entryOnly: true,
         banner: `${pkg.displayName ||
           pkg.name} hash:[hash], chunkhash:[chunkhash], name:[name]`,
+      }),
+
+      new WorkboxWebpackPlugin({
+        globDirectory: BUILD_PATH,
+        globPatterns: ['**/*.{html,js,css}'],
+        swDest: path.join(BUILD_PATH, 'sw.js'),
       }),
     ]),
   ]),

@@ -53,7 +53,7 @@ class App extends React.Component {
     } = this.props;
 
     const canShowAnswer = typeof chosenAnswerIndex === 'number';
-    const canSetAnswer = !hasSeenAnswer;
+    const canSetAnswer = true;
 
     return (
       <Card>
@@ -66,7 +66,7 @@ class App extends React.Component {
                 onClick={
                   canSetAnswer ? this.choosePossibleAnswer(i) : undefined
                 }
-                classes={cx({
+                className={cx({
                   [classes.answerChosen]: i === chosenAnswerIndex,
                   [classes.answerWrong]:
                     canShowAnswer &&

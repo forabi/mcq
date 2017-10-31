@@ -19,7 +19,7 @@ const ActiveQuestion = connect(state => ({
   ...state.questions[state.activeQuestionIndex],
   isAnswerShown: state.isAnswerShown,
   questionIndex: state.activeQuestionIndex,
-  choosenAnswerIndex: state.answers[state.activeQuestionIndex],
+  chosenAnswerIndex: state.answers[state.activeQuestionIndex],
   hasSeenAnswer: state.seenAnswers[state.activeQuestionIndex],
 }))(Question);
 

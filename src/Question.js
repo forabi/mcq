@@ -15,7 +15,7 @@ import { actionTypes } from './actionTypes';
 import './Question.css';
 
 const styles = () => ({
-  answerChoosen: {
+  answerChosen: {
     background: grey[400],
   },
   answerWrong: {
@@ -48,11 +48,11 @@ class App extends React.Component {
       possibleAnswers,
       question,
       correctAnswerIndex,
-      choosenAnswerIndex,
+      chosenAnswerIndex,
       hasSeenAnswer,
     } = this.props;
 
-    const canShowAnswer = typeof choosenAnswerIndex === 'number';
+    const canShowAnswer = typeof chosenAnswerIndex === 'number';
     const canSetAnswer = !hasSeenAnswer;
 
     return (
@@ -66,13 +66,13 @@ class App extends React.Component {
                 onClick={
                   canSetAnswer ? this.choosePossibleAnswer(i) : undefined
                 }
-                className={cx({
-                  [classes.answerChoosen]: i === choosenAnswerIndex,
+                classes={cx({
+                  [classes.answerChosen]: i === chosenAnswerIndex,
                   [classes.answerWrong]:
                     canShowAnswer &&
                     isAnswerShown &&
-                    choosenAnswerIndex !== correctAnswerIndex &&
-                    i === choosenAnswerIndex,
+                    chosenAnswerIndex !== correctAnswerIndex &&
+                    i === chosenAnswerIndex,
                   [classes.answerCorrect]:
                     canShowAnswer && isAnswerShown && i === correctAnswerIndex,
                 })}

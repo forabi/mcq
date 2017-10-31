@@ -62,7 +62,7 @@ const BUILD_PATH = path.resolve(
   process.env.BUILD_PATH || './dist',
 );
 
-const PUBLIC_PATH = '/';
+const PUBLIC_PATH = '/mcq';
 
 const excludedPatterns = compact([
   /node_modules/,

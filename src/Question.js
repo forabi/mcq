@@ -39,8 +39,6 @@ class App extends React.Component {
         chosenAnswer: i,
       },
     });
-
-    e.target.blur();
   };
 
   render() {

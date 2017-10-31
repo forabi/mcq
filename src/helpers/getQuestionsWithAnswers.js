@@ -5,7 +5,11 @@ const isCorrectAnswer = line => line.startsWith('*');
  * @param text {string}
  */
 export default function getQuestionsWithAnswers(text) {
-  const lines = text.trim().split('\n');
+  const lines = text
+    .trim()
+    .split('\n')
+    .map(line => line.trim())
+    .filter(line => line.length);
   const questionsWithAnswers = [];
   while (lines.length > 0) {
     const line = lines.shift();
